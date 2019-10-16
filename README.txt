@@ -1,6 +1,9 @@
 Step 1:
 Create instance (EC2)
 
+https://ec2instances.info/?region=us-west-2
+use c5.xlarge
+
 Step 2:
 create container (ECS)
 (TBD)
