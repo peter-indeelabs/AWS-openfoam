@@ -3,6 +3,7 @@ Create instance (EC2)
 
 Step 2:
 create container (ECS)
+(TBD)
 
 Step 3:
 Create FSX and Attach Lustre file system
@@ -30,5 +31,4 @@ https://github.com/peter-indeelabs/AWS-openfoam/blob/master/aws-scripts.sh
 
 Step 5:
 create virtual machine
-
-
+(TBD)
