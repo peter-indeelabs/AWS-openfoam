@@ -5,7 +5,7 @@ Step 2:
 create container 
 
 Step 3:
-Create FSX and Attach file system
+Create FSX and Attach Lustre file system
 
 Step 3a: https://docs.aws.amazon.com/fsx/latest/LustreGuide/install-lustre-client.html
 
