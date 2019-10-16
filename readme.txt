@@ -1,8 +1,8 @@
 Step 1:
-Create instance 
+Create instance (EC2)
 
 Step 2:
-create container 
+create container (ECS)
 
 Step 3:
 Create FSX and Attach Lustre file system
