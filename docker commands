@@ -1,0 +1,7 @@
+Examples of docker commands:
+
+docker build .
+docker images 
+docker run 2bd
+docker run -it 2bd bash
+
