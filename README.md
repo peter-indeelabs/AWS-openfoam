@@ -1,4 +1,8 @@
-# Step 1: Create shared file system storage FSx 
+# Step 1: Create high performance parallel file system FSx 
+
+This option is better than NFS share for HPC workload application
+
+Amazon FSx for Lustre is a highly parallel file system that supports sub-millisecond access to petabyte-scale file systems, designed to deliver 200 MB/s of aggregate throughput at 10,000 IOPS for every 1TiB of provisioned capacity.
 
 Follow the below instruction to install and attach Lustre file system
 Step 1a: https://docs.aws.amazon.com/fsx/latest/LustreGuide/install-lustre-client.html
@@ -18,12 +22,17 @@ sudo mount -t lustre -o noatime,flock fs-03f7dae7c222360f2.fsx.us-west-2.amazona
 
 
 
-# Step 2: Create container
+# Step 2: Create Docker
 create development environment to containizing CFD application
 Definition: A development environment is a place in AWS Cloud9 where you store your project's files and where you run the tools to develop your applications.
 
-use this docker file for openfoam installation
+Docker is set of tools that make running, building and managing software containers much easier than it otherwise might be.
+
+Use this docker file for packing up openfoam installation
 https://github.com/peter-indeelabs/AWS-openfoam/blob/master/Dockerfile
+
+Here are the docker commands:
+https://github.com/peter-indeelabs/AWS-openfoam/blob/master/docker%20commands
 
 (Reference: https://github.com/peter-indeelabs/AWS-openfoam/blob/master/aws-scripts.sh)
 
