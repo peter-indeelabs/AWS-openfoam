@@ -1,9 +1,9 @@
-# Step 1:
-Create file system FSx and Attach Lustre file system
+# Step 1: Create shared file system storage FSx 
 
-Step 3a: https://docs.aws.amazon.com/fsx/latest/LustreGuide/install-lustre-client.html
+Follow the below instruction to install and attach Lustre file system
+Step 1a: https://docs.aws.amazon.com/fsx/latest/LustreGuide/install-lustre-client.html
 
-Step 3b: 
+Step 1b: 
 Open a terminal
 
 (You must have an Amazon EC2 key pair to connect to the nodes in your cluster over a
