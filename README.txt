@@ -5,8 +5,12 @@ https://ec2instances.info/?region=us-west-2
 use c5.24xlarge (96CPU, 192GB memory, 25G Network Performance)
 
 Step 2:
-create container (ECS)
-(TBD)
+create development environment to containizing CFD application
+Definition: A development environment is a place in AWS Cloud9 where you store your project's files and where you run the tools to develop your applications.
+
+please use this script
+https://github.com/peter-indeelabs/AWS-openfoam/blob/master/aws-scripts.sh
+
 
 Step 3:
 Create FSX and Attach Lustre file system
@@ -26,10 +30,7 @@ Create a new directory on your EC2 instance, for example /fsx
 sudo mkdir /fsx
 sudo mount -t lustre -o noatime,flock fs-03f7dae7c222360f2.fsx.us-west-2.amazonaws.com@tcp:/fsx /fsx
 
-Step 4:
-install openfoam
-please use this script
-https://github.com/peter-indeelabs/AWS-openfoam/blob/master/aws-scripts.sh
+
 
 
 Step 5:
