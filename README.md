@@ -28,6 +28,8 @@ Definition: A development environment is a place in AWS Cloud9 where you store y
 
 Docker is set of tools that make running, building and managing software containers much easier than it otherwise might be.
 
+First user need to connect an AWS Cloud9 SSH development environment to a running Docker container inside of an Amazon Linux instance in Amazon EC2
+
 Use this docker file for packing up openfoam installation
 https://github.com/peter-indeelabs/AWS-openfoam/blob/master/Dockerfile
 
