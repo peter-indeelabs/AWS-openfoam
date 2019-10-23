@@ -8,8 +8,10 @@ Step 2:
 create development environment to containizing CFD application
 Definition: A development environment is a place in AWS Cloud9 where you store your project's files and where you run the tools to develop your applications.
 
-please use this script
-https://github.com/peter-indeelabs/AWS-openfoam/blob/master/aws-scripts.sh
+use this docker file for openfoam installation
+https://github.com/peter-indeelabs/AWS-openfoam/blob/master/Dockerfile
+
+(Reference: https://github.com/peter-indeelabs/AWS-openfoam/blob/master/aws-scripts.sh)
 
 
 Step 3:
@@ -31,8 +33,6 @@ sudo mkdir /fsx
 sudo mount -t lustre -o noatime,flock fs-03f7dae7c222360f2.fsx.us-west-2.amazonaws.com@tcp:/fsx /fsx
 
 
-
-
-Step 5:
+Step 4:
 create virtual machine
 (TBD)
