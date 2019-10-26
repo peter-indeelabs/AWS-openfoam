@@ -18,7 +18,9 @@ steps to create a key pair https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuid
 
 
 Create a new directory on your EC2 instance, for example /fsx
+
 -sudo mkdir /fsx
+
 -sudo mount -t lustre -o noatime,flock fs-03f7dae7c222360f2.fsx.us-west-2.amazonaws.com@tcp:/fsx /fsx
 
 
