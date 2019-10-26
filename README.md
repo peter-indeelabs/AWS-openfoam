@@ -6,9 +6,9 @@ Amazon FSx for Lustre is a highly parallel file system that supports sub-millise
 
 Follow the below instruction to install and attach Lustre file system
 
-Step 1a: https://docs.aws.amazon.com/fsx/latest/LustreGuide/install-lustre-client.html
+## Step 1a: https://docs.aws.amazon.com/fsx/latest/LustreGuide/install-lustre-client.html
 
-Step 1b: 
+## Step 1b: 
 Open a terminal
 
 (You must have an Amazon EC2 key pair to connect to the nodes in your cluster over a
@@ -53,26 +53,36 @@ Now that we have a Docker image and an ECR repository, it is time to push the im
 3) docker tag nextflow:latest 933794880782.dkr.ecr.us-west-2.amazonaws.com/nextflow:latest
 4) docker push 933794880782.dkr.ecr.us-west-2.amazonaws.com/nextflow:latest
 
-# Step 4: Create an IAM role
-When the fetch_and_run image runs as an AWS Batch job, it fetches the job script from Amazon S3. You need an IAM role that the AWS Batch job can use to access S3.
 
+# Step 4: Create AWS Batch
 
-# Step 5: Create AWS Batch
-
-## Step 5a: Create bucket 
+## Step 4a: Create bucket 
 To allow files to be uploaded to Amazon S3, it is required to create S3 bucket in West-2 region. Create the following buckets on S3
 -indeesfxsync
 -indeefdata
 -indeednfsworkdir
 
+## Step 4b: Create/Build batch job
+1) In the AWS Batch console, choose Job Definitions, Create.
+2) For the Job Definition, enter a name, for example, nextflow.
+3) For IAM Role, choose the following role
+arn:aws:iam::933794880782:role/NF0-NextflowStack-5412Z8DX5J17-IAMNextflowJobRole-SS7WMCJ1E02Z.
+4) For ECR Repository URI, enter the URI where the docker image was pushed
+933794880782.dkr.ecr.us-west-2.amazonaws.com/nextflow:latest
+5) Leave the Command field blank.
+For vCPUs, enter 2. For Memory, enter 1024MB.
 
+In the environment variables, please use the following keys and values
+1) (KEY) NF_LOGSDIRs3 (VALUE) //indeenfsworkdir/logs
+2) (KEY) NF_JOB_QUEUEarn (VALUE) aws:batch:us-west-2:933794880782:job-queue/default-13dd0220-f421-11e9-820f-065424fac776
+3) (KEY) NF_WORKDIRs3 (VALUE) //indeenfsworkdir/runs
 
-# Step 6: Create instance (EC2)
+# Step 5: Create instance (EC2)
 
 https://ec2instances.info/?region=us-west-2
 use c5.24xlarge (96CPU, 192GB memory, 25G Network Performance)
 
 
-# Step 7:
+# Step 6:
 create virtual machine
 (TBD)
