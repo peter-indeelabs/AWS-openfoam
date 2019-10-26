@@ -40,6 +40,11 @@ https://github.com/peter-indeelabs/AWS-openfoam/blob/master/docker%20commands
 
 # Step 3: Create AWS Batch
 
+Create bucket 
+To allow files to be uploaded to Amazon S3, it is required to create S3 bucket in West-2 region. Create the following buckets on S3
+-indeesfxsync
+-indeefdata
+-indeednfsworkdir
 
 # Step 4: Create instance (EC2)
 
