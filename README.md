@@ -38,7 +38,18 @@ https://github.com/peter-indeelabs/AWS-openfoam/blob/master/docker%20commands
 
 (Reference: https://github.com/peter-indeelabs/AWS-openfoam/blob/master/aws-scripts.sh)
 
-# Step 3: Create AWS Batch
+# Step 3: Creating an ECR repository
+The next step is to create an ECR repository to store the Docker image created from previous step, so that it can be retrieved by AWS Batch when running jobs.
+
+Create "nextflow" repository
+
+Now that we have a Docker image and an ECR repository, it is time to push the image to the repository. Use the following AWS CLI commands with Indee account run in cloud9 terminal
+1) $(aws ecr get-login --no-include-email --region us-west-2)
+2) docker build -t nextflow .
+3) docker tag nextflow:latest 933794880782.dkr.ecr.us-west-2.amazonaws.com/nextflow:latest
+4) docker push 933794880782.dkr.ecr.us-west-2.amazonaws.com/nextflow:latest
+
+# Step 4: Create AWS Batch
 
 Create bucket 
 To allow files to be uploaded to Amazon S3, it is required to create S3 bucket in West-2 region. Create the following buckets on S3
@@ -46,12 +57,12 @@ To allow files to be uploaded to Amazon S3, it is required to create S3 bucket i
 -indeefdata
 -indeednfsworkdir
 
-# Step 4: Create instance (EC2)
+# Step 5: Create instance (EC2)
 
 https://ec2instances.info/?region=us-west-2
 use c5.24xlarge (96CPU, 192GB memory, 25G Network Performance)
 
 
-# Step 5:
+# Step 6:
 create virtual machine
 (TBD)
