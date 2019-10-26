@@ -5,6 +5,7 @@ This option is better than NFS share for HPC workload application
 Amazon FSx for Lustre is a highly parallel file system that supports sub-millisecond access to petabyte-scale file systems, designed to deliver 200 MB/s of aggregate throughput at 10,000 IOPS for every 1TiB of provisioned capacity.
 
 Follow the below instruction to install and attach Lustre file system
+
 Step 1a: https://docs.aws.amazon.com/fsx/latest/LustreGuide/install-lustre-client.html
 
 Step 1b: 
