@@ -85,12 +85,9 @@ In the environment variables, please use the following keys and values
 2) (KEY) NF_JOB_QUEUEarn (VALUE) aws:batch:us-west-2:933794880782:job-queue/default-13dd0220-f421-11e9-820f-065424fac776
 3) (KEY) NF_WORKDIRs3 (VALUE) //indeenfsworkdir/runs
 
-# Step 5: Create instance (EC2)
+(https://ec2instances.info/?region=us-west-2
+use c5.24xlarge (96CPU, 192GB memory, 25G Network Performance))
 
-https://ec2instances.info/?region=us-west-2
-use c5.24xlarge (96CPU, 192GB memory, 25G Network Performance)
-
-
-# Step 6:
+# Step 5:
 create virtual machine
 (TBD)
