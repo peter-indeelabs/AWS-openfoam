@@ -26,7 +26,7 @@ Create a new directory on your EC2 instance, for example /fsx
 
 
 
-# Step 2: Create Docker Image
+# Step 2: Create OpenFOAM Docker Image
 This step shows how to create development environment to containizing CFD application
 
 (A development environment is a place in AWS Cloud9 where you store your project's files and where you run the tools to develop your applications.)
