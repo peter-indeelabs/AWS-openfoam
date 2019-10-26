@@ -1,4 +1,4 @@
-# Step 1: Create high performance parallel file system FSx 
+# Step 1: Create High Performance Parallel File System FSx 
 
 This option is better than NFS share for HPC workload application
 
