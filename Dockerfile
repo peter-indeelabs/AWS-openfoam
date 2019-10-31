@@ -12,4 +12,5 @@ RUN apt-get -y install openfoam6
 RUN echo "source /opt/openfoam6/etc/bashrc" >> ~/.bashrc
 RUN apt install unzip
 RUN apt install awscli -y
-ENTRYPOINT ["/opt/openfoam6/platforms/linux64GccDPInt32Opt/bin/decomposePar"]
+ADD cfdrun.sh /opt/openfoam6/platforms/linux64GccDPInt32Opt/bin/cfdrun.sh
+ENTRYPOINT ["/opt/openfoam6/platforms/linux64GccDPInt32Opt/bin/cfdrun.sh"]
