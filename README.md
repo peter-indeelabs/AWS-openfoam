@@ -85,6 +85,8 @@ In the environment variables, please use the following keys and values
 2) (KEY) NF_JOB_QUEUEarn (VALUE) aws:batch:us-west-2:933794880782:job-queue/default-13dd0220-f421-11e9-820f-065424fac776
 3) (KEY) NF_WORKDIRs3 (VALUE) //indeenfsworkdir/runs
 
+Make sure VPC points to d4ab24ac to allow mounting to /fsx 
+
 (https://ec2instances.info/?region=us-west-2
 use c5.24xlarge (96CPU, 192GB memory, 25G Network Performance))
 
