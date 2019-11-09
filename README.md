@@ -54,16 +54,6 @@ Then, the Job definition is a template for one or more jobs in your workload. Th
 Finally the Job binds a Job definition to a specific Job queue and allows you to specify the actual task command to be executed in the container.
 The job input and output data management is delegated to the user. This means that if you only use Batch API/tools you will need to take care to stage the input data from a S3 bucket (or a different source) and upload the results to a persistent storage location.
 
-
-1) In the AWS Batch console, choose Job Definitions, Create.
-2) For the Job Definition, enter a name, for example, nextflow.
-3) For IAM Role, choose the following role
-arn:aws:iam::933794880782:role/NF0-NextflowStack-5412Z8DX5J17-IAMNextflowJobRole-SS7WMCJ1E02Z.
-4) For ECR Repository URI, enter the URI where the docker image was pushed
-933794880782.dkr.ecr.us-west-2.amazonaws.com/nextflow:latest
-5) Leave the Command field blank.
-For vCPUs, enter 2. For Memory, enter 1024MB.
-
 In the environment variables, please use the following keys and values
 1) (KEY) NF_LOGSDIRs3 (VALUE) //indeenfsworkdir/logs
 2) (KEY) NF_JOB_QUEUEarn (VALUE) aws:batch:us-west-2:933794880782:job-queue/default-13dd0220-f421-11e9-820f-065424fac776
@@ -73,8 +63,16 @@ In the environment variables, please use the following keys and values
 
 Nextflow streamlines the use of AWS Batch by smoothly integrating it in its workflow processing model and enabling transparent interoperability with other systems.
 
+Use CloudFormation to create the following:
+1) The core set of resources (S3 Bucket, IAM Roles, AWS Batch) described in the Getting Started section.
+2) A containerized nextflow executable that pulls configuration and workflow definitions from S3
+3) The AWS CLI installed in job instances using conda
+4) A Batch Job Definition that runs a Nextflow head node
+5) An IAM Role for the Nextflow head node job that allows it access to AWS Batch
+6) An S3 Bucket to store your Nextflow workflow definitions
 
 
-# Step 5:
+
+# Step 4:
 create virtual machine
 (TBD)
