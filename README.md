@@ -1,13 +1,55 @@
-# Step 1: Create OpenFOAM Docker Image
+# openfoam-docker-awsbatch
+
+## Overview
+running OpenFoam job on AWS Batch
+
+## Description
+by using these scripts and commands, you can run OpenFoam job on AWS Batch.
+- building up base infrastructure and Docker build server for AWS Batch by CloudFormation
+- after the base infrastructure become ready, build docker image and push it to AWS ECR.
+- create job definition, compute environment and job queue for AWS Batch
+- submit jobs to AWS Batch
+- part of result data will be upload to S3 bucket which is created by CloudFormation
+
+# Usage
+1. login to aws console with admin
+2. go to EC2
+3. create a KeyPair
+4. run CloudFormation for AWS Batch base infrastructure
+5. login to ubuntu server
+6. run ubuntu setup script
+7. build Docker images with the Dockerfile
+8. push the images to AWS ECR
+9. edit json files based on created AWS resources
+10. create job definition on AWS Batch
+11. create computing environment on AWS Batch
+12. create job queue on AWS Batch
+13. submit jobs
+
+
+## Step 1: Create Nextflow and AWS System Manager
+
+Nextflow streamlines the use of AWS Batch by smoothly integrating it in its workflow processing model and enabling transparent interoperability with other systems.
+
+Use CloudFormation to create the following:
+1) The core set of resources (S3 Bucket, IAM Roles, AWS Batch) described in the Getting Started section.
+2) A containerized nextflow executable that pulls configuration and workflow definitions from S3
+3) The AWS CLI installed in job instances using conda
+4) A Batch Job Definition that runs a Nextflow head node
+5) An IAM Role for the Nextflow head node job that allows it access to AWS Batch
+6) An S3 Bucket to store your Nextflow workflow definitions
+
+
+# Step 2: Create OpenFOAM Docker Image
 
 This step shows how to create development environment to containizing CFD application
 (A development environment is a place in AWS Cloud9 where you store your project's files and where you run the tools to develop your applications.)
 
-## Step 1a: Create AWS Cloud9 Environment
+## Step 2a: Create AWS Cloud9 Environment
 
 create new environment named "peter-dev-machine"
 
-## Step 1b: Create Docker
+## Step 2b: Create Docker
 
 
 Docker is set of tools that make running, building and managing software containers much easier than it otherwise might be.
@@ -22,7 +64,7 @@ https://github.com/peter-indeelabs/AWS-openfoam/blob/master/docker%20commands
 
 (Reference: https://github.com/peter-indeelabs/AWS-openfoam/blob/master/aws-scripts.sh)
 
-# Step 2: Creating an ECR repository
+# Step 3: Creating an ECR repository
 The next step is to create an ECR repository to store the Docker image created from previous step, so that it can be retrieved by AWS Batch when running jobs.
 
 Create "nextflow" repository
@@ -34,16 +76,16 @@ Now that we have a Docker image and an ECR repository, it is time to push the im
 4) docker push 933794880782.dkr.ecr.us-west-2.amazonaws.com/nextflow:latest
 
 
-# Step 3: Create AWS Batch
+# Step 4: Create AWS Batch
 
-## Step 3a: Create bucket 
+## Step 4a: Create bucket 
 To allow files to be uploaded to Amazon S3, it is required to create S3 bucket in West-2 region. Create the following buckets on S3
 -indeesfxsync
 -indeefdata
 -indeednfsworkdir
 
 
-## Step 3b: Create/Build batch job
+## Step 4b: Create/Build batch job
 
 AWS Batch is a managed computing service that allows the execution of containerised workloads over the Amazon EC2 Container Service (ECS).
 
@@ -59,20 +101,7 @@ In the environment variables, please use the following keys and values
 2) (KEY) NF_JOB_QUEUEarn (VALUE) aws:batch:us-west-2:933794880782:job-queue/default-13dd0220-f421-11e9-820f-065424fac776
 3) (KEY) NF_WORKDIRs3 (VALUE) //indeenfsworkdir/runs
 
-## Step 3c: Create Nextflow and AWS System Manager
 
-Nextflow streamlines the use of AWS Batch by smoothly integrating it in its workflow processing model and enabling transparent interoperability with other systems.
-
-Use CloudFormation to create the following:
-1) The core set of resources (S3 Bucket, IAM Roles, AWS Batch) described in the Getting Started section.
-2) A containerized nextflow executable that pulls configuration and workflow definitions from S3
-3) The AWS CLI installed in job instances using conda
-4) A Batch Job Definition that runs a Nextflow head node
-5) An IAM Role for the Nextflow head node job that allows it access to AWS Batch
-6) An S3 Bucket to store your Nextflow workflow definitions
-
-
-
-# Step 4:
+# Step 5:
 create virtual machine
 (TBD)
