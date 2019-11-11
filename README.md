@@ -27,7 +27,7 @@ by using these scripts and commands, you can run OpenFoam job on AWS Batch.
 13. submit jobs
 
 
-## Step 1: Create Nextflow and AWS System Manager
+# Step 1: Create Nextflow and AWS System Manager
 
 Nextflow streamlines the use of AWS Batch by smoothly integrating it in its workflow processing model and enabling transparent interoperability with other systems.
 
