@@ -89,6 +89,9 @@ To allow files to be uploaded to Amazon S3, it is required to create S3 bucket i
 
 ## Step 4b: Create/Build batch job
 
+
+![batch](images/batch.png)
+
 AWS Batch is a managed computing service that allows the execution of containerised workloads over the Amazon EC2 Container Service (ECS).
 
 Batch is organised in Compute Environments, Job queues, Job definitions and Jobs.
