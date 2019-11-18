@@ -122,9 +122,9 @@ The Job definition is a template for one or more jobs in your workload. This is 
 The Job binds a Job definition to a specific Job queue and allows you to specify the actual task command to be executed in the container. 
 
 Internally AWS Batch uses many services i.e.
--EC2 Instances
--Elastic Container Service (ECS)
--Elastic Container Registry (ECR) <br/>
+- EC2 Instances
+- Elastic Container Service (ECS)
+- Elastic Container Registry (ECR) <br/>
 which are shown in the following diagram and internet access is required for some communications
 
 ![batch](images/communication.png)
@@ -149,8 +149,8 @@ docker exec -d ubuntu touch /bin/bash
 # Step 6: Create Remote GPU Machine for post-processing
 
 ### Step 6a: Download and Install Remmina 
--sudo apt update
--sudo apt install remmina
+- sudo apt update
+- sudo apt install remmina
 
 ### Step 6b: Decript windows password
 
