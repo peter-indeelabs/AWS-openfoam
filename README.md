@@ -110,13 +110,13 @@ Use this to tail log files from CFD output files.
 The following commands are useful:
 
 - Run a new container:
-docker run --name test -it ubuntu
+\ndocker run --name test -it ubuntu
 
 - List containers :  
-docker ps -a
+\ndocker ps -a
 
 - Run docker exec on a running container
-docker exec -d ubuntu touch /bin/bash
+\ndocker exec -d ubuntu touch /bin/bash
 
 # Step 6:
 create virtual machine
