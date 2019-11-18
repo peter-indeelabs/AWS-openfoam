@@ -6,10 +6,10 @@ Indeelabs documentation of running OpenFoam job on AWS Batch.
 AWS Batch allow developers to build efficient, long-running compute jobs by focusing on the business logic required (CFD simulation in this case), while AWS manages the scheduling and provisioning of the work.
 
 ### Prerequisites:
--Have an AWS account 
--Create an IAM user with administrator permissions. 
--Install and configure AWS CLI.
--If something from the above doesn’t work, it might be because a permission is missing, or the CLI is not configured properly.
+- Have an AWS account 
+- Create an IAM user with administrator permissions. 
+- Install and configure AWS CLI.
+- If something from the above doesn’t work, it might be because a permission is missing, or the CLI is not configured properly.
 
 ## Description
 by using these scripts and commands, you can run OpenFoam job on AWS Batch.
