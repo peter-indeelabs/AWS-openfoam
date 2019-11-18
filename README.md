@@ -27,7 +27,7 @@ by using these scripts and commands, you can run OpenFoam job on AWS Batch.
 13. submit jobs
 
 
-# Step 1: Create Nextflow and AWS System Manager
+# Step 1: Create Nextflow
 
 Nextflow streamlines the use of AWS Batch by smoothly integrating it in its workflow processing model and enabling transparent interoperability with other systems.
 
@@ -101,7 +101,23 @@ In the environment variables, please use the following keys and values
 2) (KEY) NF_JOB_QUEUEarn (VALUE) aws:batch:us-west-2:933794880782:job-queue/default-13dd0220-f421-11e9-820f-065424fac776
 3) (KEY) NF_WORKDIRs3 (VALUE) //indeenfsworkdir/runs
 
+# Step 5: Create AWS System Session Manager
 
-# Step 5:
+Session Manager is a fully managed AWS Systems Manager capability that lets you manage your Amazon EC2 instances through an interactive one-click browser-based shell or through the AWS CLI. 
+
+Use this to tail log files from CFD output files.
+
+The following commands are useful:
+
+- Run a new container:
+docker run --name test -it ubuntu
+
+- List containers :  
+docker ps -a
+
+- Run docker exec on a running container
+docker exec -d ubuntu touch /bin/bash
+
+# Step 6:
 create virtual machine
 (TBD)
