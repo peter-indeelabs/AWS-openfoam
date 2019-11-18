@@ -1,7 +1,9 @@
 # openfoam-docker-awsbatch
 
 ## Overview
-running OpenFoam job on AWS Batch
+running OpenFoam job on AWS Batch.
+
+AWS Batch allow developers to build efficient, long-running compute jobs by focusing on the business logic required (CFD simulation in this case), while AWS manages the scheduling and provisioning of the work.
 
 ## Description
 by using these scripts and commands, you can run OpenFoam job on AWS Batch.
@@ -90,16 +92,24 @@ To allow files to be uploaded to Amazon S3, it is required to create S3 bucket i
 AWS Batch is a managed computing service that allows the execution of containerised workloads over the Amazon EC2 Container Service (ECS).
 
 Batch is organised in Compute Environments, Job queues, Job definitions and Jobs.
+AWS Batch organises its work into four components:
+1. Compute Environment: The compute resources that run your Jobs. <br/>
 The Compute Environment allows you to define the computing resources required for a specific workload (type). You can specify the minimum and maximum number of CPUs that can be allocated, the EC2 provisioning model (On-demand or Spot), the AMI to be used and the allowed instance types. <br/>
-The Job queue definition allows you to bind a specific task to one or more Compute Environments.
-Then, the Job definition is a template for one or more jobs in your workload. This is required to specify the Docker image to be used in running a particular task along with other requirements such as the container mount points, the number of CPUs, the amount of memory and the number of retries in case of job failure. <br/>
-Finally the Job binds a Job definition to a specific Job queue and allows you to specify the actual task command to be executed in the container. <br/>
-The job input and output data management is delegated to the user. This means that if you only use Batch API/tools you will need to take care to stage the input data from a S3 bucket (or a different source) and upload the results to a persistent storage location.
 
 In the environment variables, please use the following keys and values
 1) (KEY) NF_LOGSDIRs3 (VALUE) //indeenfsworkdir/logs
 2) (KEY) NF_JOB_QUEUEarn (VALUE) aws:batch:us-west-2:933794880782:job-queue/default-13dd0220-f421-11e9-820f-065424fac776
 3) (KEY) NF_WORKDIRs3 (VALUE) //indeenfsworkdir/runs
+
+2. Job Queues: All submitted jobs are listed in the job queues. <br/>
+The Job queue definition allows you to bind a specific task to one or more Compute Environments.
+
+3. Job Definition: Where you describe how your work is to be executed. <br/>
+The Job definition is a template for one or more jobs in your workload. This is required to specify the Docker image to be used in running a particular task along with other requirements such as the container mount points, the number of CPUs, the amount of memory and the number of retries in case of job failure. 
+
+4. Jobs: The unit of work submitted to AWS Batch, whether it be implemented as a shell script, executable or Docker container image. <br/>
+The Job binds a Job definition to a specific Job queue and allows you to specify the actual task command to be executed in the container. 
+
 
 # Step 5: Create AWS System Session Manager
 
