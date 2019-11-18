@@ -105,7 +105,7 @@ In the environment variables, please use the following keys and values
 
 Session Manager is a fully managed AWS Systems Manager capability that lets you manage your Amazon EC2 instances through an interactive one-click browser-based shell or through the AWS CLI. 
 
-Use this to tail log files from CFD output files.
+This is set-up so user can tail log files from CFD output files and monitor the runs (Do not submit job manually from session manager).
 
 The following commands are useful:
 
@@ -118,6 +118,18 @@ docker ps -a
 - Run docker exec on a running container <br/>
 docker exec -d ubuntu touch /bin/bash
 
-# Step 6:
-create virtual machine
-(TBD)
+# Step 6: Create Remote GPU Machine for post-processing
+
+## Step 6a: Download and Install Remmina 
+-sudo apt update
+-sudo apt install remmina
+
+## Step 6b: Decript windows password
+
+## Step 6c: Set-up configuratoin
+- User: Administrator
+- Password: (from Step 6b)
+- Server: (use EC2 instance IP address)
+
+# References: 
+1) Docker CLI References https://docs.docker.com/engine/reference/commandline/docker/
