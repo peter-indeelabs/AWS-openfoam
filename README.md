@@ -42,7 +42,7 @@ Use CloudFormation to create the following:
 
 # Step 2: Create OpenFOAM Docker Image
 
-This step shows how to create development environment to containizing CFD application
+This step shows how to create development environment to containizing CFD application <br/>
 (A development environment is a place in AWS Cloud9 where you store your project's files and where you run the tools to develop your applications.)
 
 ## Step 2a: Create AWS Cloud9 Environment
@@ -56,10 +56,10 @@ Docker is set of tools that make running, building and managing software contain
 
 First user need to connect an AWS Cloud9 SSH development environment to a running Docker container inside of an Amazon Linux instance in Amazon EC2
 
-Use this docker file for packing up openfoam installation
+Use this docker file for packing up openfoam installation <br/>
 https://github.com/peter-indeelabs/AWS-openfoam/blob/master/Dockerfile
 
-Here are the docker commands:
+Here are the docker commands: <br/>
 https://github.com/peter-indeelabs/AWS-openfoam/blob/master/docker%20commands
 
 (Reference: https://github.com/peter-indeelabs/AWS-openfoam/blob/master/aws-scripts.sh)
@@ -90,10 +90,10 @@ To allow files to be uploaded to Amazon S3, it is required to create S3 bucket i
 AWS Batch is a managed computing service that allows the execution of containerised workloads over the Amazon EC2 Container Service (ECS).
 
 Batch is organised in Compute Environments, Job queues, Job definitions and Jobs.
-The Compute Environment allows you to define the computing resources required for a specific workload (type). You can specify the minimum and maximum number of CPUs that can be allocated, the EC2 provisioning model (On-demand or Spot), the AMI to be used and the allowed instance types.
+The Compute Environment allows you to define the computing resources required for a specific workload (type). You can specify the minimum and maximum number of CPUs that can be allocated, the EC2 provisioning model (On-demand or Spot), the AMI to be used and the allowed instance types. <br/>
 The Job queue definition allows you to bind a specific task to one or more Compute Environments.
-Then, the Job definition is a template for one or more jobs in your workload. This is required to specify the Docker image to be used in running a particular task along with other requirements such as the container mount points, the number of CPUs, the amount of memory and the number of retries in case of job failure.
-Finally the Job binds a Job definition to a specific Job queue and allows you to specify the actual task command to be executed in the container.
+Then, the Job definition is a template for one or more jobs in your workload. This is required to specify the Docker image to be used in running a particular task along with other requirements such as the container mount points, the number of CPUs, the amount of memory and the number of retries in case of job failure. <br/>
+Finally the Job binds a Job definition to a specific Job queue and allows you to specify the actual task command to be executed in the container. <br/>
 The job input and output data management is delegated to the user. This means that if you only use Batch API/tools you will need to take care to stage the input data from a S3 bucket (or a different source) and upload the results to a persistent storage location.
 
 In the environment variables, please use the following keys and values
@@ -109,13 +109,13 @@ Use this to tail log files from CFD output files.
 
 The following commands are useful:
 
-- Run a new container
+- Run a new container <br/>
 docker run --name test -it ubuntu
 
-- List containers
+- List containers <br/>
 docker ps -a
 
-- Run docker exec on a running container
+- Run docker exec on a running container <br/>
 docker exec -d ubuntu touch /bin/bash
 
 # Step 6:
