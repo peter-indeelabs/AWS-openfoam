@@ -120,13 +120,13 @@ docker exec -d ubuntu touch /bin/bash
 
 # Step 6: Create Remote GPU Machine for post-processing
 
-## Step 6a: Download and Install Remmina 
+### Step 6a: Download and Install Remmina 
 -sudo apt update
 -sudo apt install remmina
 
-## Step 6b: Decript windows password
+### Step 6b: Decript windows password
 
-## Step 6c: Set-up configuratoin
+### Step 6c: Set-up configuratoin
 - User: Administrator
 - Password: (from Step 6b)
 - Server: (use EC2 instance IP address)
