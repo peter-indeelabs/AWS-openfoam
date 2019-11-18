@@ -97,9 +97,11 @@ AWS Batch organises its work into four components:
 The Compute Environment allows you to define the computing resources required for a specific workload (type). You can specify the minimum and maximum number of CPUs that can be allocated, the EC2 provisioning model (On-demand or Spot), the AMI to be used and the allowed instance types. <br/>
 
 In the environment variables, please use the following keys and values
-1) (KEY) NF_LOGSDIRs3 (VALUE) //indeenfsworkdir/logs
-2) (KEY) NF_JOB_QUEUEarn (VALUE) aws:batch:us-west-2:933794880782:job-queue/default-13dd0220-f421-11e9-820f-065424fac776
-3) (KEY) NF_WORKDIRs3 (VALUE) //indeenfsworkdir/runs
+- (KEY) NF_LOGSDIRs3 (VALUE) //indeenfsworkdir/logs
+- (KEY) NF_JOB_QUEUEarn (VALUE) aws:batch:us-west-2:933794880782:job-queue/default-13dd0220-f421-11e9-820f-065424fac776
+- (KEY) NF_WORKDIRs3 (VALUE) //indeenfsworkdir/runs
+
+
 
 2. Job Queues: All submitted jobs are listed in the job queues. <br/>
 The Job queue definition allows you to bind a specific task to one or more Compute Environments.
