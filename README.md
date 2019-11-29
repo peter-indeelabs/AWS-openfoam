@@ -137,14 +137,11 @@ This is set-up so user can tail log files from CFD output files and monitor the 
 
 The following commands are useful:
 
-- Run a new container <br/>
-docker run --name test -it ubuntu
-
 - List containers <br/>
 docker ps -a
 
 - Run docker exec on a running container <br/>
-docker exec -d ubuntu touch /bin/bash
+docker exec -it xxx /bin/bash
 
 # Step 6: Create Remote GPU Machine for post-processing
 
