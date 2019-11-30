@@ -202,6 +202,10 @@ g3.4xlarge	16cores $1.14 per Hour
 2) Install pip
 3) Install awscli
 
+### Step 6e: Expand EBS disk space
+Open the remote desktop protocol (RDP) session for the instance, launch the Disk Management view by using the diskmgmt.msc command, choose Action, and then choose Refresh.
+
+- Open the context (right-click) menu, and then choose Extend Volume.
 
 # References: 
 1) Docker CLI References https://docs.docker.com/engine/reference/commandline/docker/
