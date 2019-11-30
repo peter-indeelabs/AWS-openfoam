@@ -195,7 +195,7 @@ g3.4xlarge	16cores $1.14 per Hour
 ### Step 6c: Set-up configuratoin
 - User: Administrator
 - Password: (from Step 6b)
-- Server: (use EC2 instance IP address)
+- Server: (use EC2 instance IPv4 Public IP)
 
 ### Step 6d: Set-up Paraview
 1) Install python
