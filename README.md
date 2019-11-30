@@ -197,5 +197,11 @@ g3.4xlarge	16cores $1.14 per Hour
 - Password: (from Step 6b)
 - Server: (use EC2 instance IP address)
 
+### Step 6d: Set-up Paraview
+1) Install python
+2) Install pip
+3) Install awscli
+
+
 # References: 
 1) Docker CLI References https://docs.docker.com/engine/reference/commandline/docker/
