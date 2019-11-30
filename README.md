@@ -93,7 +93,8 @@ To allow files to be uploaded to Amazon S3, it is required to create S3 bucket i
 -indeednfsworkdir
 
 In the bucket policy, make sure add the following policy:
-```{
+```
+{
     "Version": "2012-10-17",
     "Statement": [
         {
@@ -106,7 +107,22 @@ In the bucket policy, make sure add the following policy:
             "Resource": "arn:aws:s3:::indeenfsworkdir/sim18-run-batch/output/*"
         }
     ]
-}```
+}
+```
+
+In the CORS configuration, make sure add the following xml code:
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+<CORSRule>
+    <AllowedOrigin>yourdomain.com</AllowedOrigin>
+    <AllowedMethod>GET</AllowedMethod>
+    <AllowedMethod>POST</AllowedMethod>
+    <AllowedMethod>PUT</AllowedMethod>
+    <AllowedHeader>*</AllowedHeader>
+</CORSRule>
+</CORSConfiguration>
+```
 
 ## Step 4b: Create/Build batch job
 
