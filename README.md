@@ -77,12 +77,13 @@ The next step is to create an ECR repository to store the Docker image created f
 
 Create "nextflow" repository
 
-Now that we have a Docker image and an ECR repository, it is time to push the image to the repository. Use the following AWS CLI commands with Indee account run in cloud9 terminal
-1) $(aws ecr get-login --no-include-email --region us-west-2)
-2) docker build -t nextflow .
-3) docker tag nextflow:latest 933794880782.dkr.ecr.us-west-2.amazonaws.com/nextflow:latest
-4) docker push 933794880782.dkr.ecr.us-west-2.amazonaws.com/nextflow:latest
-
+Now that we have a Docker image and an ECR repository, it is time to push the image to the repository. Use the following AWS CLI commands with Indee account run in cloud9 terminal:
+```
+- $(aws ecr get-login --no-include-email --region us-west-2)
+- docker build -t nextflow .
+- docker tag nextflow:latest 933794880782.dkr.ecr.us-west-2.amazonaws.com/nextflow:latest
+- docker push 933794880782.dkr.ecr.us-west-2.amazonaws.com/nextflow:latest
+```
 
 # Step 4: Create AWS Batch
 
@@ -169,11 +170,14 @@ This is set-up so user can tail log files from CFD output files and monitor the 
 The following commands are useful:
 
 - List containers <br/>
+```
 docker ps -a
+```
 
 - Run docker exec on a running container <br/>
+```
 docker exec -it xxx /bin/bash
-
+```
 # Step 6: Create Remote GPU Machine for post-processing
 
 ### Step 6a: Set-up GPU instance on EC2
