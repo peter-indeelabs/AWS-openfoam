@@ -137,6 +137,9 @@ AWS Batch organises its work into four components:
 1. Compute Environment: The compute resources that run your Jobs. <br/>
 The Compute Environment allows you to define the computing resources required for a specific workload (type). You can specify the minimum and maximum number of CPUs that can be allocated, the EC2 provisioning model (On-demand or Spot), the AMI to be used and the allowed instance types. <br/>
 
+Here are some options: <br/>
+1) 96cores 190GB memory (c5.metal $4.08 per Wall-clock-Hour)
+
 In the environment variables, please use the following keys and values
 - (KEY) NF_LOGSDIRs3 (VALUE) //indeenfsworkdir/logs
 - (KEY) NF_JOB_QUEUEarn (VALUE) aws:batch:us-west-2:933794880782:job-queue/default-13dd0220-f421-11e9-820f-065424fac776
