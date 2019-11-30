@@ -92,6 +92,21 @@ To allow files to be uploaded to Amazon S3, it is required to create S3 bucket i
 -indeefdata
 -indeednfsworkdir
 
+In the bucket policy, make sure add the following policy:
+```{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": [
+                "s3:PutObject",
+                "s3:PutObjectAcl"
+            ],
+            "Resource": "arn:aws:s3:::indeenfsworkdir/sim18-run-batch/output/*"
+        }
+    ]
+}```
 
 ## Step 4b: Create/Build batch job
 
@@ -145,7 +160,10 @@ docker exec -it xxx /bin/bash
 
 # Step 6: Create Remote GPU Machine for post-processing
 
-### Step 6a: Download and Install Remmina 
+### Step 6a: Set-up GPU instance on EC2
+g3.4xlarge	16cores $1.14 per Hour
+
+### Step 6a: Download and Install Remmina on local machine
 - sudo apt update
 - sudo apt install remmina
 
