@@ -197,7 +197,7 @@ g3.4xlarge	16cores $1.14 per Hour
 - Password: (from Step 6b)
 - Server: (use EC2 instance IPv4 Public IP)
 
-### Step 6d: Set-up Paraview
+### Step 6d: Download and Install Paraview tools (4.3.1)
 1) Install python
 2) Install pip
 3) Install awscli
