@@ -191,6 +191,7 @@ g3.4xlarge	16cores $1.14 per Hour
 - sudo apt install remmina
 
 ### Step 6b: Decript windows password
+- Select the instance, choose Actions, and then choose Get Windows Password
 
 ### Step 6c: Set-up configuratoin
 - User: Administrator
