@@ -153,6 +153,9 @@ The Job queue definition allows you to bind a specific task to one or more Compu
 3. Job Definition: Where you describe how your work is to be executed. <br/>
 The Job definition is a template for one or more jobs in your workload. This is required to specify the Docker image to be used in running a particular task along with other requirements such as the container mount points, the number of CPUs, the amount of memory and the number of retries in case of job failure. 
 
+Make sure choose multi-node option and set the following parameters: <br/>
+Number of nodes:2
+
 4. Jobs: The unit of work submitted to AWS Batch, whether it be implemented as a shell script, executable or Docker container image. <br/>
 The Job binds a Job definition to a specific Job queue and allows you to specify the actual task command to be executed in the container. 
 
