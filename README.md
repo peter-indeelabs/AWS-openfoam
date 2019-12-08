@@ -29,7 +29,7 @@ by using these scripts and commands, you can run OpenFoam job on AWS Batch.
 7. build Docker images with the Dockerfile
 8. push the images to AWS ECR
 9. edit json files based on created AWS resources
-10. create job definition on AWS Batch
+10. create job definition (w/ multi-nodes) on AWS Batch
 11. create computing environment on AWS Batch
 12. create job queue on AWS Batch
 13. submit jobs
@@ -158,6 +158,10 @@ Number of nodes:2
 
 4. Jobs: The unit of work submitted to AWS Batch, whether it be implemented as a shell script, executable or Docker container image. <br/>
 The Job binds a Job definition to a specific Job queue and allows you to specify the actual task command to be executed in the container. 
+
+Use the following to run 190cpu job:
+vCPU=95
+memory: 120000MB
 
 Internally AWS Batch uses many services i.e.
 - EC2 Instances
