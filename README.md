@@ -216,7 +216,7 @@ Open the remote desktop protocol (RDP) session for the instance, launch the Disk
 - Open the context (right-click) menu, and then choose Extend Volume.
 
 # User Notes:
-- copy polyMesh/ folder (new geometry mesh) to constant/ folder (~1-1.5GB)
+- copy polyMesh/ folder (new geometry mesh) to constant/ folder (~4-5GB)
 - must download 0/ folder to local machine from potentialfoam to edit the inlet/outlet condition after complete potentialfoam solution
 
 # References: 
