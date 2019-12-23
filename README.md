@@ -145,7 +145,7 @@ In the environment variables, please use the following keys and values
 - (KEY) NF_JOB_QUEUEarn (VALUE) aws:batch:us-west-2:933794880782:job-queue/default-13dd0220-f421-11e9-820f-065424fac776
 - (KEY) NF_WORKDIRs3 (VALUE) //indeenfsworkdir/runs
 
-
+Make to set maximum vCPUs=400 (to allow 2 jobs running at the same time)
 
 2. Job Queues: All submitted jobs are listed in the job queues. <br/>
 The Job queue definition allows you to bind a specific task to one or more Compute Environments.
