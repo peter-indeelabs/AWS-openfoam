@@ -127,8 +127,12 @@ In the CORS configuration, make sure add the following xml code:
 </CORSConfiguration>
 ```
 
-## Step 4b: Create/Build batch job
+## Step 4b: Create Launch Template
+A launch template can contain all or some of the parameters to launch an instance. When you launch an instance using a launch template, you can override parameters that are specified in the launch template.
 
+Make sure set volume storage to 1000GB and enable "Delete on termination" 
+
+## Step 4c: Create/Build batch job
 
 ![batch](images/batch.png)
 
