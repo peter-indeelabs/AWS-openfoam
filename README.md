@@ -91,9 +91,9 @@ docker push 933794880782.dkr.ecr.us-west-2.amazonaws.com/nextflow:latest
 
 ## Step 4a: Create bucket 
 To allow files to be uploaded to Amazon S3, it is required to create S3 bucket in West-2 region. Create the following buckets on S3. <br/>
--indeesfxsync <br/>
--indeefdata <br/>
--indeednfsworkdir <br/>
+- indeesfxsync 
+- indeefdata 
+- indeednfsworkdir 
  
 In the bucket policy, make sure add the following policy:
 ```
