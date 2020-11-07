@@ -190,12 +190,12 @@ The following commands are useful:
 
 - List containers <br/>
 ```
-docker ps -a
+sudo docker ps
 ```
 
 - Run docker exec on a running container <br/>
 ```
-docker exec -it xxx /bin/bash
+sudo docker exec -it xxx /bin/bash
 ```
 # Step 6: Create Remote GPU Machine for post-processing
 
