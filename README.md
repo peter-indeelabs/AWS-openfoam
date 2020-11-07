@@ -150,17 +150,21 @@ Here are some options: <br/>
 1) 96cores 190GB memory (c5.metal $4.08 per Wall-clock-Hour)
 
 In the environment variables, please use the following keys and values
+- (KEY) BATCH_FILE_S3_URL (VALUE) s3://indeenfsworkdir/test-190/potential/test.sh (need to change per run)
+- (KEY) NF_WORKDIR (VALUE) /fsx/test-190  (need to change per run)
 - (KEY) NF_LOGSDIRs3 (VALUE) //indeenfsworkdir/logs
 - (KEY) NF_JOB_QUEUEarn (VALUE) aws:batch:us-west-2:933794880782:job-queue/default-13dd0220-f421-11e9-820f-065424fac776
-- (KEY) NF_WORKDIRs3 (VALUE) //indeenfsworkdir/runs
+
 
 Make to set maximum vCPUs=400 (to allow 2 jobs running at the same time)
 
 2. Job Queues: All submitted jobs are listed in the job queues. <br/>
-The Job queue definition allows you to bind a specific task to one or more Compute Environments.
+The Job queue definition allows you to bind a specific task to one or more Compute Environments. <br/>
+Please use the following queue for "on-demand" to avoid interruption of job: highpriority-231522c0-0184-11ea-8bbd-06343619a258
 
 3. Job Definition: Where you describe how your work is to be executed. <br/>
-The Job definition is a template for one or more jobs in your workload. This is required to specify the Docker image to be used in running a particular task along with other requirements such as the container mount points, the number of CPUs, the amount of memory and the number of retries in case of job failure. 
+The Job definition is a template for one or more jobs in your workload. This is required to specify the Docker image to be used in running a particular task along with other requirements such as the container mount points, the number of CPUs, the amount of memory and the number of retries in case of job failure. <br/>
+Pleae use the following job definition: nextflow Rev5 (multinode)
 
 Make sure choose multi-node option and set the following parameters: <br/>
 Number of nodes:2
@@ -168,7 +172,8 @@ Number of nodes:2
 4. Jobs: The unit of work submitted to AWS Batch, whether it be implemented as a shell script, executable or Docker container image. <br/>
 The Job binds a Job definition to a specific Job queue and allows you to specify the actual task command to be executed in the container. 
 
-Use the following to run 190cpu job:
+Use the following to run 190cpu job (must lower memory to 120000MB otherwise job retains in RUNNABLE):
+Command=test.sh
 vCPU=95
 memory: 120000MB
 
