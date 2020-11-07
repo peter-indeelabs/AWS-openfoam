@@ -89,6 +89,7 @@ docker push 933794880782.dkr.ecr.us-west-2.amazonaws.com/nextflow:latest
 
 NOTE: Please make sure ECR repository is enabled.
 
+
 # Step 4: Create AWS Batch
 
 ## Step 4a: Create bucket 
