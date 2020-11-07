@@ -150,10 +150,10 @@ Here are some options: <br/>
 1) 96cores 190GB memory (c5.metal $4.08 per Wall-clock-Hour)
 
 In the environment variables, please use the following keys and values: <br/>
-**- (KEY) BATCH_FILE_S3_URL (VALUE) s3://indeenfsworkdir/test-190/potential/test.sh ** (need to change per run) <br/>
-**- (KEY) NF_WORKDIR (VALUE) /fsx/test-190 ** (need to change per run) <br/>
-**- (KEY) NF_LOGSDIRs3 (VALUE) //indeenfsworkdir/logs** <br/>
-**- (KEY) NF_JOB_QUEUEarn (VALUE) aws:batch:us-west-2:933794880782:job-queue/default-13dd0220-f421-11e9-820f-065424fac776** <br/>
+- **(KEY) BATCH_FILE_S3_URL (VALUE) s3://indeenfsworkdir/test-190/potential/test.sh ** (need to change per run) <br/>
+- **(KEY) NF_WORKDIR (VALUE) /fsx/test-190 ** (need to change per run) <br/>
+- **(KEY) NF_LOGSDIRs3 (VALUE) //indeenfsworkdir/logs** <br/>
+- **(KEY) NF_JOB_QUEUEarn (VALUE) aws:batch:us-west-2:933794880782:job-queue/default-13dd0220-f421-11e9-820f-065424fac776** <br/>
 
 Make to set maximum vCPUs=400 (to allow 2 jobs running at the same time)
 
