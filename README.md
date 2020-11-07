@@ -172,10 +172,10 @@ Number of nodes:2
 4. Jobs: The unit of work submitted to AWS Batch, whether it be implemented as a shell script, executable or Docker container image. <br/>
 The Job binds a Job definition to a specific Job queue and allows you to specify the actual task command to be executed in the container. 
 
-Use the following to run 190cpu job (must lower memory to 120000MB otherwise job retains in RUNNABLE):
-Command=test.sh
-vCPU=95
-memory: 120000MB
+Use the following to run 190cpu job (must lower memory to 120000MB otherwise job retains in RUNNABLE): <br/>
+Command=test.sh <br/>
+vCPU=95 <br/>
+memory: 120000MB <br/>
 
 Internally AWS Batch uses many services i.e.
 - EC2 Instances
