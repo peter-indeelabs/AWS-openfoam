@@ -237,5 +237,15 @@ PotentialFoam:
 - copy polyMesh/ folder (new geometry mesh) to constant/ folder (~4-5GB)
 - download 0/ folder to local machine from potentialfoam to edit the inlet/outlet condition in P (1-2 GB) and U files after complete potentialfoam solution
 
+```
+outlet
+    {
+        type            zeroGradient;
+    }
+    inlet
+    {
+        type 			  zeroGradient;
+    }
+```
 # References: 
 1) Docker CLI References https://docs.docker.com/engine/reference/commandline/docker/
