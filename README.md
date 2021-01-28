@@ -166,7 +166,7 @@ The Job definition is a template for one or more jobs in your workload. This is 
 Pleae use the following job definition: **nextflow Rev5** (multinode)
 
 Make sure choose multi-node option and set the following parameters: <br/>
-Number of nodes:2
+Number of nodes:2 (default is 2)
 
 4. Jobs: The unit of work submitted to AWS Batch, whether it be implemented as a shell script, executable or Docker container image. <br/>
 The Job binds a Job definition to a specific Job queue and allows you to specify the actual task command to be executed in the container. 
@@ -190,17 +190,21 @@ Session Manager is a fully managed AWS Systems Manager capability that lets you 
 
 This is set-up so user can tail log files from CFD output files and monitor the runs (Do not submit job manually from session manager).
 
-The following commands are useful:
+1. Select the instance and start the session <br/>
 
-- List containers <br/>
+2. List the containers ID by typing the following commands <br/>
+
 ```
 sudo docker ps
 ```
+3. Copy the container ID, xxx <br/>
 
-- Run docker exec on a running container <br/>
+4. Run docker exec on a running container <br/>
 ```
 sudo docker exec -it xxx /bin/bash
 ```
+5. cd /fsx
+
 # Step 6: Create Remote GPU Machine for post-processing
 
 ### Step 6a: Set-up GPU instance on EC2
