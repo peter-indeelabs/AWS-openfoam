@@ -235,8 +235,9 @@ Open the remote desktop protocol (RDP) session for the instance, launch the Disk
 # User Notes:
 PotentialFoam:
 - copy polyMesh/ folder (new geometry mesh) to constant/ folder (~4-5GB)
-- download 0/ folder to local machine from potentialfoam to edit the inlet/outlet condition in P (1-2 GB) and U files after complete potentialfoam solution
+- download 0/ folder to local machine from potentialfoam to edit the inlet/outlet condition in P and U (1-2 GB) files after complete potentialfoam solution
 
+U inlet and outlet conditions are:
 ```
 outlet
     {
