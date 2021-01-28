@@ -245,7 +245,7 @@ U inlet and outlet conditions are:
     }
     inlet
     {
-        type 		zeroGradient;
+        type   zeroGradient;
     }
 ```
 # References: 
