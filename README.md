@@ -239,13 +239,13 @@ PotentialFoam:
 
 U inlet and outlet conditions are:
 ```
-outlet
+    outlet
     {
-        type            zeroGradient;
+        type   zeroGradient;
     }
     inlet
     {
-        type 			  zeroGradient;
+        type 		zeroGradient;
     }
 ```
 # References: 
