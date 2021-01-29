@@ -254,9 +254,13 @@ U inlet and outlet conditions are:
 ```
 foamLog logfile.foam
 ```
-2. Copy file
+2. Copy files
 ```
 aws s3 cp test.txt s3://mybucket/test2.txt
+```
+3. Check mesh quality
+```
+checkMesh > log.checkMesh &
 ```
 
 # References: 
