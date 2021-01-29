@@ -254,6 +254,10 @@ U inlet and outlet conditions are:
 ```
 foamLog logfile.foam
 ```
+2. Copy file
+```
+aws s3 cp test.txt s3://mybucket/test2.txt
+```
 
 # References: 
 1) Docker CLI References https://docs.docker.com/engine/reference/commandline/docker/
