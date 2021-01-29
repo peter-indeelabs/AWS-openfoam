@@ -248,5 +248,12 @@ U inlet and outlet conditions are:
         type   zeroGradient;
     }
 ```
+# Useful Commands:
+
+1. Create residual history files
+```
+foamLog logfile.foam
+```
+
 # References: 
 1) Docker CLI References https://docs.docker.com/engine/reference/commandline/docker/
