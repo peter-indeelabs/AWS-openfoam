@@ -172,7 +172,7 @@ Number of nodes:2 (default is 2)
 The Job binds a Job definition to a specific Job queue and allows you to specify the actual task command to be executed in the container. 
 
 Use the following to run 190cpu job (must lower memory to 120000MB otherwise job retains in RUNNABLE): <br/>
-**Command=test.sh <br/>**
+**Command=test.sh <b
 **vCPU=95 <br/>**
 **memory: 120000MB <br/>**
 
@@ -262,6 +262,11 @@ aws s3 cp test.txt s3://mybucket/test2.txt
 ```
 checkMesh > log.checkMesh &
 ```
+
+# Performance 
+
+1. RANS (SimpleFOAM)
+- 20 hours for 2000 iterations (on 190cpu)
 
 # References: 
 1) Docker CLI References https://docs.docker.com/engine/reference/commandline/docker/
