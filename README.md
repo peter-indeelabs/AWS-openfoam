@@ -262,6 +262,14 @@ aws s3 cp test.txt s3://mybucket/test2.txt
 ```
 checkMesh > log.checkMesh &
 ```
+4. reconstruct mesh 
+```
+reconstructPar -time "4000" > logfile.reconstruct2 &
+```
+5. export Ensight files
+```
+foamToEnsight -time "4000" > log.ensight &
+```
 
 # Performance 
 
