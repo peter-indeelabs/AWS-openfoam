@@ -278,3 +278,4 @@ foamToEnsight -time "4000" > log.ensight &
 
 # References: 
 1) Docker CLI References https://docs.docker.com/engine/reference/commandline/docker/
+2) EC2 billing/charge https://aws.amazon.com/premiumsupport/knowledge-center/ec2-billing-terminated/
