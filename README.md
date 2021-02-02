@@ -232,6 +232,9 @@ Open the remote desktop protocol (RDP) session for the instance, launch the Disk
 
 - Open the context (right-click) menu, and then choose Extend Volume.
 
+Please check out details from this reference:
+https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/recognize-expanded-volume-windows.html?icmpid=docs_ec2_console
+
 # User Notes:
 PotentialFoam:
 - copy polyMesh/ folder (new geometry mesh) to constant/ folder (~4-5GB)
