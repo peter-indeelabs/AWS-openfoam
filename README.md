@@ -176,7 +176,7 @@ Use the following to run 190cpu job (must lower memory to 120000MB otherwise job
 **vCPU=95 <br/>**
 **memory: 120000MB <br/>**
 
-**set ulimit nofile parameter values** (to allow large number of open files)
+**set ulimit nofile = 16384 (hard limit/soft limit)** (to allow large number of open files)
 https://access.redhat.com/solutions/61334
 
 Internally AWS Batch uses many services i.e.
