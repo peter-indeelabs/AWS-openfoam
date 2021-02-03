@@ -176,6 +176,8 @@ Use the following to run 190cpu job (must lower memory to 120000MB otherwise job
 **vCPU=95 <br/>**
 **memory: 120000MB <br/>**
 
+**set ulimit nofile parameter values** (to allow large number of open files)
+
 Internally AWS Batch uses many services i.e.
 - EC2 Instances
 - Elastic Container Service (ECS)
