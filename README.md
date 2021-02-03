@@ -147,7 +147,7 @@ AWS Batch organises its work into four components:
 The Compute Environment allows you to define the computing resources required for a specific workload (type). You can specify the minimum and maximum number of CPUs that can be allocated, the EC2 provisioning model (On-demand or Spot), the AMI to be used and the allowed instance types. <br/>
 
 Here are some options: <br/>
-1) 96cores 190GB memory (c5.metal $4.08 per Wall-clock-Hour)
+1) 96cores 190GB memory (c5.metal or c5.24xlarge $4.08 per Wall-clock-Hour)
 
 In the environment variables, please use the following keys and values: <br/>
 - **(KEY) BATCH_FILE_S3_URL (VALUE) s3://indeenfsworkdir/test-190/potential/test.sh** (need to change per run) <br/>
@@ -166,7 +166,7 @@ The Job definition is a template for one or more jobs in your workload. This is 
 Pleae use the following job definition: **nextflow Rev5** (multinode)
 
 Make sure choose multi-node option and set the following parameters: <br/>
-Number of nodes:2 (default is 2)
+Number of nodes:4 (default is 4)
 
 4. Jobs: The unit of work submitted to AWS Batch, whether it be implemented as a shell script, executable or Docker container image. <br/>
 The Job binds a Job definition to a specific Job queue and allows you to specify the actual task command to be executed in the container. 
@@ -211,7 +211,7 @@ sudo docker exec -it xxx /bin/bash
 # Step 6: Create Remote GPU Machine for post-processing
 
 ### Step 6a: Set-up GPU instance on EC2
-g3.4xlarge	16cores $1.14 per Hour
+p2.8xlarge 8cpu + 32cpu, 488GBRam $7.2/hour
 
 ### Step 6a: Download and Install Remmina on local machine
 - sudo apt update
