@@ -163,7 +163,10 @@ Please use the following queue for "on-demand" to avoid interruption of job: **h
 
 3. Job Definition: Where you describe how your work is to be executed. <br/>
 The Job definition is a template for one or more jobs in your workload. This is required to specify the Docker image to be used in running a particular task along with other requirements such as the container mount points, the number of CPUs, the amount of memory and the number of retries in case of job failure. <br/>
-Pleae use the following job definition: **nextflow Rev5** (multinode)
+Pleae use the following job definition: 
+
+choose **nextflow Rev5 for 190cpu** (multinode=2)
+choose **netflow Rev9 for 380cpu** (multinode=4)
 
 Make sure choose multi-node option and set the following parameters: <br/>
 Number of nodes:4 (default is 4)
