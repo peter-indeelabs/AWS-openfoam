@@ -147,8 +147,8 @@ AWS Batch organises its work into four components:
 The Compute Environment allows you to define the computing resources required for a specific workload (type). You can specify the minimum and maximum number of CPUs that can be allocated, the EC2 provisioning model (On-demand or Spot), the AMI to be used and the allowed instance types. <br/>
 
 Here are some options: <br/>
-1) 96cores 190GB memory (c5.metal or c5.24xlarge $4.08 per Wall-clock-Hour)
-2) 70 cores 180GB memory (c5n.18xlarge $3.888 per Wall-clock-hour)
+- 96cores 190GB memory (c5.metal or c5.24xlarge $4.08 per Wall-clock-Hour)
+- 70 cores 180GB memory (c5n.18xlarge $3.888 per Wall-clock-hour)
 
 **c5n.18xlarge is better scaling than c5.24xlarge**
 
