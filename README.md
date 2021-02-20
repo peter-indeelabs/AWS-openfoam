@@ -148,6 +148,9 @@ The Compute Environment allows you to define the computing resources required fo
 
 Here are some options: <br/>
 1) 96cores 190GB memory (c5.metal or c5.24xlarge $4.08 per Wall-clock-Hour)
+2) 70 cores 180GB memory (c5n.18xlarge $3.888 per Wall-clock-hour)
+
+**c5n.18xlarge is better scaling than c5.24xlarge**
 
 In the environment variables, please use the following keys and values: <br/>
 - **(KEY) BATCH_FILE_S3_URL (VALUE) s3://indeenfsworkdir/test-190/potential/test.sh** (need to change per run) <br/>
@@ -159,7 +162,11 @@ Make to set maximum vCPUs=400 (to allow 2 jobs running at the same time)
 
 2. Job Queues: All submitted jobs are listed in the job queues. <br/>
 The Job queue definition allows you to bind a specific task to one or more Compute Environments. <br/>
-Please use the following queue for "on-demand" to avoid interruption of job: **highpriority-231522c0-0184-11ea-8bbd-06343619a258**
+
+Please use the following queues:
+
+- 380 cores "on-demand" (to avoid interruption of job): **highpriority-231522c0-0184-11ea-8bbd-06343619a258**
+- 700 cores "on-demand" **new-ondemand-c5n-queue**
 
 3. Job Definition: Where you describe how your work is to be executed. <br/>
 The Job definition is a template for one or more jobs in your workload. This is required to specify the Docker image to be used in running a particular task along with other requirements such as the container mount points, the number of CPUs, the amount of memory and the number of retries in case of job failure. <br/>
@@ -167,6 +174,7 @@ Pleae use the following job definition:
 
 choose **nextflow Rev5 for 190cpu** (multinode=2)
 choose **netflow Rev9 for 380cpu** (multinode=4)
+choose **netflow Rev10 for 700cpu** (multinode=10)
 
 Make sure choose multi-node option and set the following parameters: <br/>
 Number of nodes:4 (default is 4)
@@ -178,6 +186,12 @@ Use the following to run 190cpu job (must lower memory to 120000MB otherwise job
 **Command=test.sh <b
 **vCPU=95 <br/>**
 **memory: 120000MB <br/>**
+
+Use the following to run 700cpu job (must lower memory to 120000MB otherwise job retains in RUNNABLE): <br/>
+**Command=test.sh <b
+**vCPU=70 <br/>**
+**memory: 120000MB <br/>**
+
 
 **set ulimit nofile = 16384 (hard limit/soft limit)** (to allow large number of open files)
 https://access.redhat.com/solutions/61334
