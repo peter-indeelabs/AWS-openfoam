@@ -183,12 +183,12 @@ Number of nodes:4 (default is 4)
 The Job binds a Job definition to a specific Job queue and allows you to specify the actual task command to be executed in the container. 
 
 Use the following to run 190cpu job (must lower memory to 120000MB otherwise job retains in RUNNABLE): <br/>
-**Command=test.sh <b
+**Command=test.sh <br/>**
 **vCPU=95 <br/>**
 **memory: 120000MB <br/>**
 
 Use the following to run 700cpu job (must lower memory to 120000MB otherwise job retains in RUNNABLE): <br/>
-**Command=test.sh <b
+**Command=test.sh <br/>**
 **vCPU=70 <br/>**
 **memory: 120000MB <br/>**
 
